@@ -5,7 +5,7 @@ const ShowFruit = () => {
   const { id } = useParams();
   const [fruit, setFruit] = useState(null);
   useEffect(() => {
-    fetch(`http://localhost:3001/fruits/${id}`, {
+    fetch(import.meta.env.VITE_BACKENDURL + `/fruits/${id}`, {
       headers: {
         "Authorization": localStorage.getItem("userToken"),
       },

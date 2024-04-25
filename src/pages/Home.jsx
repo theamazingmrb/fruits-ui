@@ -7,7 +7,7 @@ const Home = () => {
   const token = localStorage.getItem("userToken")
   const navigate = useNavigate();
   useEffect(() => {
-    fetch("http://localhost:3001/fruits",{
+    fetch(import.meta.env.VITE_BACKENDURL + "/fruits",{
       headers: {
         "Content-Type": "application/json",
         "Authorization": token,
@@ -24,7 +24,7 @@ const Home = () => {
   const handleDelete = async (e, id) => {
     e.preventDefault()
     console.log(localStorage.getItem("userToken"))
-    fetch(`http://localhost:3001/fruits/${id}`, {
+    fetch(process.env.BACKENDURL + `/fruits/${id}`, {
       method: "DELETE",
       headers: {
         "Authorization": token,

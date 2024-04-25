@@ -10,7 +10,7 @@ const Login = () => {
 
   const handleSubmit = (e) =>{
     e.preventDefault()
-    fetch('http://localhost:3001/users/login', {
+    fetch(import.meta.env.VITE_BACKENDURL + '/users/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

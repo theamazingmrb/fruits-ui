@@ -9,7 +9,7 @@ const EditFruit = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:3001/fruits/${id}`, {
+    fetch(import.meta.env.VITE_BACKENDURL + `/fruits/${id}`, {
       headers: {
         Authorization: localStorage.getItem("userToken"),
       },
@@ -31,7 +31,7 @@ const EditFruit = () => {
 
     // Perform your submission logic here, e.g., sending data to a server
     // For demonstration, we'll just log the current form state to the console
-    fetch(`http://localhost:3001/fruits/${id}`, {
+    fetch(import.meta.env.VITE_BACKENDURL + `/fruits/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

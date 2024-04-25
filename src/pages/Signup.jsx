@@ -9,7 +9,7 @@ const Signup = () => {
   const navigate = useNavigate()
   const handleSubmit = (e) =>{
     e.preventDefault()
-    fetch('http://localhost:3001/users/signup', {
+    fetch(import.meta.env.VITE_BACKENDURL +'/users/signup', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
